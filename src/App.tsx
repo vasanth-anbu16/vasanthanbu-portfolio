@@ -19,10 +19,9 @@ import profileImage from './assets/vassu.jpeg';
 // Import project images
 import project1Image from './assets/project1.png';
 import project2Image from './assets/project2.jpg';
-import project3Image from './assets/project3.jpeg';
+import project3Image from './assets/project3.png';
 
-const resumePDF = '/Vasanth_Frontend_Developer_Resume.pdf';
-
+import resumePDF from './assets/vasanth-frontend-dev-resume.pdf';
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -115,11 +114,11 @@ const App = () => {
       },
       {
         id: 3,
-        role: "Python Programming Intern",
+        role: "Python Programming Intern - Online",
         company: "CODTECH IT Solutions",
         period: "July 2024 - Aug 2024",
         description: "Gained hands-on experience in Python programming and data handling techniques.",
-        type: "Internship"
+        type: "Virtual-Internship"
       }
     ],
     projects: [
@@ -128,7 +127,7 @@ const App = () => {
         title: "Personalized Tourism with AI Assistance Mobile App",
         category: "Mobile & AI",
         description: "A comprehensive tourism app for Tiruvannamalai featuring an AI chat assistant, GPS-based Girivalam map, and offline devotional music playback.",
-        tags: ["React Native", "Node.js", "Firebase", "MongoDB"],
+        tags: ["React Native", "Node.js","Javascript", "Firebase", "MongoDB"],
         image: project1Image,
         bg: "bg-gradient-to-br from-blue-50 to-cyan-50",
         githubUrl: "https://github.com/vasanth-anbu16/Girivalam-mobile-app-final-year-project"
@@ -138,20 +137,20 @@ const App = () => {
         title: "Age & Gender Detection",
         category: "Machine Learning",
         description: "Real-time image processing system using OpenCV and ML models. Features a Flask REST API for handling webcam capture and JSON data transfer.",
-        tags: ["Python", "Flask", "OpenCV", "HTML/CSS"],
+        tags: ["Python", "Flask", "OpenCV","Javascript","HTML/CSS" ],
         image: project2Image,
         bg: "bg-gradient-to-br from-violet-50 to-pink-50",
-        githubUrl: "#"
+        githubUrl: "https://github.com/vasanth-anbu16/age-gender-detection-flask-webapp-mini-project"
       },
       {
         id: 3,
         title: "Bmindz Pvt Ltd",
         category: "Frontend Dev",
         description: "Contributing to various client-facing web applications at Bmindz Pvt Ltd, focusing on component reusability, responsive layouts, and performance optimization.",
-        tags: ["React", "Tailwind CSS", "JavaScript"],
+        tags: ["HTML/CSS","Javascript","React", "Tailwind CSS"],
         image: project3Image,
         bg: "bg-gradient-to-br from-emerald-50 to-teal-50",
-        githubUrl: "#"
+        githubUrl: "https://bmindz.com/"
       }
     ]
   };
@@ -208,44 +207,44 @@ const App = () => {
             </button>
           </div>
         </div>
+      </nav>
 
-        {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-xl z-40">
-            <div className="flex flex-col items-center gap-4 py-6 px-4">
-              {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-lg font-semibold py-3 ${
-                    activeSection === item.toLowerCase() ? 'text-blue-600' : 'text-slate-700'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
-              <div className="flex gap-4 pt-6">
-                <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="p-3 bg-slate-100 rounded-full text-slate-700">
-                  <FaGithub size={22} />
-                </a>
-                <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="p-3 bg-slate-100 rounded-full text-blue-600">
-                  <FaLinkedin size={22} />
-                </a>
-                <a href={`mailto:${portfolioData.contact.email}`} className="p-3 bg-slate-100 rounded-full text-red-500">
-                  <FaEnvelope size={22} />
-                </a>
-                <a
-                  href={`https://wa.me/${portfolioData.contact.whatsapp}?text=Hi%20wassup%20lets%20connect%3F`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-3 bg-slate-100 rounded-full text-emerald-500"
-                >
-                  <FaWhatsapp size={22} />
-                </a>
-              </div>
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-40 pt-16 bg-white">
+          <div className="flex flex-col items-center gap-4 py-6 px-4 h-full overflow-y-auto">
+            {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className={`text-lg font-semibold py-4 w-full text-center ${
+                  activeSection === item.toLowerCase() ? 'text-blue-600' : 'text-slate-700'
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+            <div className="flex gap-4 pt-8">
+              <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="p-3 bg-slate-100 rounded-full text-slate-700">
+                <FaGithub size={22} />
+              </a>
+              <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="p-3 bg-slate-100 rounded-full text-blue-600">
+                <FaLinkedin size={22} />
+              </a>
+              <a href={`mailto:${portfolioData.contact.email}`} className="p-3 bg-slate-100 rounded-full text-red-500">
+                <FaEnvelope size={22} />
+              </a>
+              <a
+                href={`https://wa.me/${portfolioData.contact.whatsapp}?text=Hi%20wassup%20lets%20connect%3F`}
+                target="_blank"
+                rel="noreferrer"
+                className="p-3 bg-slate-100 rounded-full text-emerald-500"
+              >
+                <FaWhatsapp size={22} />
+              </a>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
 
       <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -256,7 +255,7 @@ const App = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900">
-              Hi, I'm {portfolioData.name} 👋
+              Hey, I'm {portfolioData.name} 👋
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 {portfolioData.role}
