@@ -106,7 +106,7 @@ const App = () => {
       },
       {
         id: 2,
-        role: "Mobile App Developer Intern",
+        role: "Mobile App Full-stack Developer Intern",
         company: "Lansub Technologies Pvt Ltd",
         period: "Jan 2025 - Apr 2025",
         description: "Developed a real-time Tourism App using React Native & Node.js. Integrated an AI chat assistant and GPS navigation for the Girivalam map.",
